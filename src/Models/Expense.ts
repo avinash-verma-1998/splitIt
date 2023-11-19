@@ -11,5 +11,5 @@ const expenseSchema = new Schema({
     group:GroupType,
 })
 
-export const Expense = mongoose.model('Expense',expenseSchema);
+export const ExpenseModel = mongoose.model('Expense',expenseSchema);
 export const ExpenseType = {type:mongoose.Schema.ObjectId, ref:'Expense'}

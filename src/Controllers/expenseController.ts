@@ -1,17 +1,17 @@
 import { Request, Response } from "express";
-import { validateUser } from "../utils/validation";
-import { addUser } from "../utils/dbOps";
+import { validateExpense, validateUser } from "../utils/validation";
+import { addExpense } from "../utils/dbOps";
 
-export const createUser  = async (req:Request,res:Response) => {
+export const createExpense  = async (req:Request,res:Response) => {
     const data = req.body;
     console.log(data)
-    if(!validateUser(data)) res.json({
+    if(!validateExpense(data)) res.json({
         error:"invalid body"
     })
-    const user = {
+    const expense = {
         name:data.name
     }
-    if(await addUser(user))res.json({
+    if(await addExpense(expense))res.json({
         message:"user created"
     })
     else{

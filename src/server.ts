@@ -5,8 +5,6 @@ import bodyParser from 'body-parser';
 const app: Express = express();
 
 //middleware
-
-// parse application/json
 app.use(bodyParser.json())
 //routes
 app.use('/api/user',userRouter);
